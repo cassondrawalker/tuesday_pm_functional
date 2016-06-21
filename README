@@ -1,0 +1,10 @@
+README for analysis of NEON LiDAR data
+
+Code written by:
+  Cassondra Walker
+cassondra.walker@okstate.edu
+
+This set of analyses expects to have a directory of data sibling but not within it.  
+This is due to the size of the files in comparision to reposisitory size.
+
+Some output file may also be external to this directory, althought all can be generated throughout this code here.
