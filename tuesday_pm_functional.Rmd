@@ -121,7 +121,7 @@ leg.y <- par()$usr[4] + 50 -(abs(par()$usr[3]-par()$usr[4])/2)
 
 # create the legend
 legend(leg.x, leg.y,  # set x,y legend location
-       legend = c("Low Vegetation", "Medium Vegetation","High Vegetation"),
+       legend = c("Low Veg", "Medium Veg","High Veg"),
        fill = c("brown","yellow","green"),
        bty="n") # turn off border
 
@@ -131,7 +131,7 @@ legend(leg.x, leg.y,  # set x,y legend location
 
 ``` {r export_raster}
 
-
+pdf(file = "Canopy_Height_Map_Classified_TEAK.pdf",width=7,height=5)
 writeRaster(chm.class,
             filename="../outputs/TEAK/Teak_Classified_CHM.tif",
             format="GTiff",
