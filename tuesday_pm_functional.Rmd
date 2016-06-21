@@ -139,5 +139,9 @@ writeRaster(chm.class,
             overwrite = TRUE,
             NAflag = -9999)
 
+# Log the R environment used to run this code
+sink(paste0(format(Sys.time(),"%Y-%m-%d_%H%M%S"),"SessionInfo.txt"))
+sessionInfo()
+sink()
 ```
 
