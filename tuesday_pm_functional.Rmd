@@ -99,8 +99,8 @@ abline(v=class.matrix[,2], col="red")
 pdf(file = "Teak_CHM_denisty_with_breaks.pdf",width=6,height=7)
 ```
 
-## Clean up the figure
-
+## Clean up the figure  
+# This Code does not plot in R
 ``` {r figure_options}
 
 # change margins of the plotting space
