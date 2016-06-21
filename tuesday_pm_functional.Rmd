@@ -88,15 +88,16 @@ chm.class <- reclassify(canopy_hm,
                         class.matrix)
 plot(chm.class)
 
+# Export PDF
+pdf(file = "../outputs/TEAK/Teak_CHM_denisty_with_breaks.pdf",width=6,height=7)
+
 density(canopy_hm,
         main = "Canopy heights at Teakettle site",
         xlab = "height (m)")
 
 abline(v=class.matrix[,2], col="red")
 
-# Export PDF
-
-pdf(file = "Teak_CHM_denisty_with_breaks.pdf",width=6,height=7)
+dev.off()
 ```
 
 ## Clean up the figure  
@@ -107,6 +108,7 @@ pdf(file = "Teak_CHM_denisty_with_breaks.pdf",width=6,height=7)
 # xpd = FALSE means do not plot outside bounds
 par(xpd = FALSE, mar=c(5.1, 4.1, 4.1, 4.5))
 
+pdf(file = "../outputs/TEAK/Canopy_Height_Map_Classified_TEAK.pdf",width=7,height=5)
 # plot reclassified raster with new margins and set up color scheme
 plot(chm.class,
      col=c("brown","yellow","green"), 
@@ -125,13 +127,14 @@ legend(leg.x, leg.y,  # set x,y legend location
        fill = c("brown","yellow","green"),
        bty="n") # turn off border
 
+dev.off()
 ```
 
 # Export Geotiff
 
 ``` {r export_raster}
 
-pdf(file = "Canopy_Height_Map_Classified_TEAK.pdf",width=7,height=5)
+
 writeRaster(chm.class,
             filename="../outputs/TEAK/Teak_Classified_CHM.tif",
             format="GTiff",
